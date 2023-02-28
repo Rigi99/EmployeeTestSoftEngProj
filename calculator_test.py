@@ -6,8 +6,8 @@ def test_calc_addition():
     assert output == 3
 
 
-def test_calc_substraction():
-    output = calculator.substract(3, 1)
+def test_calc_subtraction():
+    output = calculator.subtract(3, 1)
     assert output == 2
 
 
