@@ -21,13 +21,16 @@ class RelationsManager:
                      birth_date=datetime.date(1995, 1, 1), hire_date=datetime.date(2015, 1, 1)),
 
             Employee(id=6, first_name="Scotty", last_name="Bomba", base_salary=1300,
-                     birth_date=datetime.date(1977, 1, 1), hire_date=datetime.date(2008, 1, 1))
+                     birth_date=datetime.date(1977, 1, 1), hire_date=datetime.date(2008, 1, 1)),
+
+            Employee(id=7, first_name="Zsombor", last_name="Rigmanyi", base_salary=1300,
+                     birth_date=datetime.date(2000, 6, 28), hire_date=datetime.date(2008, 1, 1))
         ]
 
         # Employee.ID=1 is a team lead and 2, 3 are part of the team
         self.teams = {
             1: [2, 3],
-            4: [5, 6]
+            4: [5, 6, 7]
         }
 
     def is_leader(self, employee) -> bool:
