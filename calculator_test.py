@@ -14,3 +14,8 @@ def test_calc_subtraction():
 def test_calc_multiply():
     output = calculator.multiply(2, 3)
     assert output == 6
+
+
+def test_calc_multiply2():
+    output = calculator.multiply(5, 10)
+    assert output == 50
