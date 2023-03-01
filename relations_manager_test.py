@@ -39,3 +39,11 @@ def test_gretchen_watford_base_salary():
     all_employees = rm.get_all_employees()
     assert any(emp.first_name == "Gretchen" and emp.last_name == "Watford" and emp.base_salary == 4000 for emp in
                all_employees)
+
+
+def test_tomas_andre_not_a_leader():
+    rm = RelationsManager()
+    all_employees = rm.get_all_employees()
+    tomas = next(emp for emp in all_employees if emp.first_name == 'Tomas' and emp.last_name == 'Andre')
+    assert not rm.is_leader(tomas)
+    assert rm.get_team_members(tomas) is None
