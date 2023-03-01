@@ -47,3 +47,10 @@ def test_tomas_andre_not_a_leader():
     tomas = next(emp for emp in all_employees if emp.first_name == 'Tomas' and emp.last_name == 'Andre')
     assert not rm.is_leader(tomas)
     assert rm.get_team_members(tomas) is None
+
+
+def test_jude_overcash_not_in_database():
+    rm = RelationsManager()
+    all_employees = rm.get_all_employees()
+    assert not any(emp.first_name == "Jude" and emp.last_name == "Overcash" for emp in
+                   all_employees)
