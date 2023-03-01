@@ -32,6 +32,7 @@ class RelationsManager:
             1: [2, 3],
             4: [5, 6, 7]
         }
+        # adjustments ok
 
     def is_leader(self, employee) -> bool:
         return employee.id in self.teams
