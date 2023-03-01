@@ -22,3 +22,13 @@ def test_john_doe_team_members():
                all_employees)
     assert any(emp.first_name == "Jettie" and emp.last_name == "Lynch" and emp.id in team_members for emp in
                all_employees)
+
+
+def test_tomas_andre_not_on_team():
+    rm = RelationsManager()
+    john = Employee(id=1, first_name="John", last_name="Doe", base_salary=3000,
+                    birth_date=date(1970, 1, 31), hire_date=date(1990, 10, 1))
+    team_members = rm.get_team_members(john)
+    all_employees = rm.get_all_employees()
+    assert not any(emp.first_name == "Tomas" and emp.last_name == "Andre" and emp.id in team_members for emp in
+                   all_employees)
