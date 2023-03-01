@@ -54,3 +54,5 @@ def test_jude_overcash_not_in_database():
     all_employees = rm.get_all_employees()
     assert not any(emp.first_name == "Jude" and emp.last_name == "Overcash" for emp in
                    all_employees)
+
+# tests passed

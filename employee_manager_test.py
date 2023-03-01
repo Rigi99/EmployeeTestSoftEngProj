@@ -32,3 +32,5 @@ def test_calculate_salary_and_send_email():
     expected_message = f"{e1.first_name} {e1.last_name} your salary: {em.calculate_salary(e1)} has been transferred " \
                        f"to you."
     email_sender_mock.send_email.assert_called_once_with(message, expected_message)
+
+# tests passed
