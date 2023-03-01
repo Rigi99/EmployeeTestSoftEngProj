@@ -32,3 +32,10 @@ def test_tomas_andre_not_on_team():
     all_employees = rm.get_all_employees()
     assert not any(emp.first_name == "Tomas" and emp.last_name == "Andre" and emp.id in team_members for emp in
                    all_employees)
+
+
+def test_gretchen_watford_base_salary():
+    rm = RelationsManager()
+    all_employees = rm.get_all_employees()
+    assert any(emp.first_name == "Gretchen" and emp.last_name == "Watford" and emp.base_salary == 4000 for emp in
+               all_employees)
