@@ -23,11 +23,13 @@ class EmployeeManager:
 
         return salary
 
-    def calculate_salary_and_send_email(self, employee: Employee) -> None:
+    def calculate_salary_and_send_email(self, employee: Employee, email_sender=None) -> str:
         salary = self.calculate_salary(employee)
-
-        print(f"{employee.first_name} {employee.last_name} your salary: {salary} has been transferred to you.")
-        pass
+        message = f"{employee.first_name} {employee.last_name} your salary: {salary} has been transferred to you."
+        if email_sender:
+            email_sender.send_email(message, message)
+        print(message)
+        return message
 
 
 if __name__ == '__main__':
