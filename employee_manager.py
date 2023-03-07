@@ -30,7 +30,6 @@ class EmployeeManager:
             email_sender.send_email(message, message)
         print(message)
         return message
-    # adjustment ok
 
 
 if __name__ == '__main__':
